@@ -136,7 +136,8 @@ class PatientController extends Controller
 
             $patient->delete();
 
-            return response()->json(['message' => 'Patient deleted successfully.'], 204);
+            return response()->json(['message' => 'Patient deleted successfully.'], 200);
+
         } catch (\Exception $e) {
             return response()->json(['error' => 'An error occurred while deleting the patient.'], 500);
         }
