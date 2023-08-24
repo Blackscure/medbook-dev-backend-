@@ -19,7 +19,7 @@ class PatientController extends Controller
             $patients = Patient::with('gender', 'services')->get();
             return response()->json($patients);
         } catch (\Exception $e) {
-            return response()->json(['error' => 'An error occurred while fetching patients.'], 500);
+            return response()->json(['error' => 'An error occurred while fetching patients: ' . $e->getMessage()], 500);
         }
     }
 

@@ -7,8 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Gender extends Model
 {
+
     use HasFactory;
-    
+    protected $table = 'tbl_gender';
+
     public function patients()
     {
         return $this->hasMany(Patient::class);
